@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package com.sample.bootgrpc;
+
+option java_package = "com.sample.bootgrpc.api";
+
+option java_multiple_files = true;
+
+option java_outer_classname = "BootMessageProto";
+
+service BootService {
+  rpc GiveBootValues (BootRequest) returns (BootResponse){}
+} 
+
+message BootRequest {
+  	string name = 1;
+}
+
+message BootResponse {
+	string respName = 1;
+    int32 respId = 2;
+}
+
+
+
